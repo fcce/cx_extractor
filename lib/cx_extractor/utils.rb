@@ -59,5 +59,6 @@ module CxExtractor
       str.gsub!("\r\n|\r", "\n")
       str
     end
+
   end
 end

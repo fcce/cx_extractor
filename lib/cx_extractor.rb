@@ -16,6 +16,7 @@ module CxExtractor
       block_distribution = line_block_distribute(lines)
       content = get_content(lines, block_distribution)
       content = get_content_by_tag(html, content) if explore_parent
+      content.gsub("\n",'') if remove_newline
       content
     end
 
@@ -52,7 +53,7 @@ module CxExtractor
         ptext << p_dom.parent if block_content.include?(p_dom.text)
       end
       max_p = ptext.max_by { |i| ptext.count(i) }
-      get_clean_text(max_p.to_s).squeeze
+      get_clean_text(max_p.to_s).squeeze.strip
     end
   end
 end
