@@ -1,5 +1,7 @@
 # CxExtractor
 
+[![Build Status](https://travis-ci.org/fcce/cx_extractor.svg?branch=master)](https://travis-ci.org/fcce/cx_extractor)
+
 Extract article from the web page, this gem is appropriate for the web page which contains lots of text.
 
 ## Installation
