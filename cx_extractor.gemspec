@@ -13,11 +13,11 @@ Gem::Specification.new do |spec|
 Used to extract text from the web page.
 This tool is appropriate for the web page which contains lots of text.
   CONTENT
-  spec.homepage      = 'https://github.com/fcce/bos'
+  spec.homepage      = 'https://fcce.github.io/cx_extractor/'
   spec.license       = 'MIT'
 
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = " Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = "https://fcce.github.io/cx_extractor'"
   else
     raise 'RubyGems 2.0 or newer is required to protect against ' \
       'public gem pushes.'
@@ -35,10 +35,8 @@ This tool is appropriate for the web page which contains lots of text.
   spec.add_dependency 'gruff', '~> 0.7.0'
   spec.add_dependency 'nokogiri', '~> 1.0'
   spec.add_development_dependency 'bundler', '~> 1.16'
-  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'charlock_holmes'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'typhoeus'
-  spec.add_development_dependency 'charlock_holmes'
-
 end

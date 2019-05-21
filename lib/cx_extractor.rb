@@ -37,12 +37,10 @@ module CxExtractor
 
         chart_points += [from_line, to_line]
       end
-      if chart_distribution
-        if chart_points.size > 0
-          chart(block_distribution, chart_points)
-        else
-          warn 'there is no content for the web page, cannot chart'
-        end
+      if chart_distribution && !chart_points.empty?
+        chart(block_distribution, chart_points)
+      else
+        warn 'there is no content for the web page, cannot chart'
       end
       content.join("\n")
     end
@@ -50,7 +48,6 @@ module CxExtractor
     def get_contect_block(block_distribution, to_line)
       from_line = find_surge(block_distribution, to_line, threshold)
       to_line = find_dive(block_distribution, from_line)
-      p [from_line, to_line]
       [from_line, to_line]
     end
 
@@ -62,7 +59,9 @@ module CxExtractor
         ptext << p_dom.parent if block_content.include?(p_dom.text)
       end
       max_p = ptext.max_by { |i| ptext.count(i) }
-      get_clean_text(max_p.to_s)
+      get_clean_text(max_p.to_s).split("\n").map(&:strip).join(
+        "\n"
+      ).squeeze
     end
   end
 end

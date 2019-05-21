@@ -19,7 +19,7 @@ module CxExtractor
         if block_distribution[index] > threshold && (
            block_distribution[index + 1] > 0 ||
            block_distribution[index + 2] > 0 ||
-           block_distribution[index + 3] > 0 )
+           block_distribution[index + 3] > 0)
           return index
         end
       end
@@ -47,7 +47,7 @@ module CxExtractor
       # remove css
       html.gsub!(%r{<style.*?>.*?(.|\n)*?</style>}, "\n")
       # remove tag
-      html.gsub!(/<.*?(.|\n)*?>/, "")
+      html.gsub!(/<.*?(.|\n)*?>/, '')
       replace_special_char(html)
     end
 
@@ -59,6 +59,5 @@ module CxExtractor
       str.gsub!("\r\n|\r", "\n")
       str
     end
-
   end
 end

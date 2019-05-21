@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cx_extractor (0.1.0)
+    cx_extractor (0.1.2)
       gruff (~> 0.7.0)
       nokogiri (~> 1.0)
 
