@@ -8,8 +8,7 @@ RSpec.describe CxExtractor do
   it 'content' do
     Typhoeus::Config.user_agent = 'Mozilla/5.0 (compatible; Baiduspider/2.0;+http://www.baidu.com/search/spider.html'
     options = { followlocation: true }
-    url = 'https://finance.sina.com.cn/ ' \
-          'roll/2019-05-21/doc-ihvhiqay0150502.shtml'
+    url = 'https://finance.sina.com.cn/roll/2019-05-21/doc-ihvhiqay0150502.shtml'
     response = Typhoeus.get(url, options)
     body = response.body
     detection = CharlockHolmes::EncodingDetector.detect(body)
