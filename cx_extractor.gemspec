@@ -38,4 +38,7 @@ This tool is appropriate for the web page which contains lots of text.
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'typhoeus'
+  spec.add_development_dependency 'charlock_holmes'
+
 end

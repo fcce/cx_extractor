@@ -3,6 +3,8 @@ require 'cx_extractor/config'
 require 'cx_extractor/chart'
 require 'cx_extractor/utils'
 require 'nokogiri'
+require 'typhoeus'
+require 'charlock_holmes'
 # nodoc
 module CxExtractor
   extend Chart if explore_parent
@@ -16,8 +18,8 @@ module CxExtractor
       block_distribution = line_block_distribute(lines)
       content = get_content(lines, block_distribution)
       content = get_content_by_tag(html, content) if explore_parent
-      content.gsub("\n",'') if remove_newline
-      content
+      # content.gsub("\n",'') if remove_newline
+      content.squeeze.strip
     end
 
     def get_title(html)
@@ -35,13 +37,20 @@ module CxExtractor
 
         chart_points += [from_line, to_line]
       end
-      chart(block_distribution, chart_points) if chart_distribution
+      if chart_distribution
+        if chart_points.size > 0
+          chart(block_distribution, chart_points)
+        else
+          warn 'there is no content for the web page, cannot chart'
+        end
+      end
       content.join("\n")
     end
 
     def get_contect_block(block_distribution, to_line)
       from_line = find_surge(block_distribution, to_line, threshold)
       to_line = find_dive(block_distribution, from_line)
+      p [from_line, to_line]
       [from_line, to_line]
     end
 
@@ -53,7 +62,7 @@ module CxExtractor
         ptext << p_dom.parent if block_content.include?(p_dom.text)
       end
       max_p = ptext.max_by { |i| ptext.count(i) }
-      get_clean_text(max_p.to_s).squeeze.strip
+      get_clean_text(max_p.to_s)
     end
   end
 end

@@ -15,11 +15,11 @@ module CxExtractor
     end
 
     def find_surge(block_distribution, start, threshold)
-      ((start + 1)..block_distribution.length - 3).each do |index|
-        if block_distribution[index] > threshold &&
-           block_distribution[index + 1] > 0 &&
-           block_distribution[index + 2] > 0 &&
-           block_distribution[index + 3] > 0
+      ((start + 1)...block_distribution.length - 3).each do |index|
+        if block_distribution[index] > threshold && (
+           block_distribution[index + 1] > 0 ||
+           block_distribution[index + 2] > 0 ||
+           block_distribution[index + 3] > 0 )
           return index
         end
       end
@@ -27,7 +27,7 @@ module CxExtractor
     end
 
     def find_dive(block_distribution, surge_point)
-      ((surge_point + 1)...(block_distribution.size - 1)).each do |index|
+      ((surge_point + 1)...(block_distribution.size - 2)).each do |index|
         if block_distribution[index].zero? &&
            block_distribution[index + 1].zero?
           return index - 1
@@ -39,7 +39,7 @@ module CxExtractor
     def get_clean_text(dom)
       # remove html comment
       html = dom.clone
-      html.gsub!(/<!--.*?(.|\n)*?-->/, '')
+      html.gsub!(/<!--.*?(.|\n)*?-->/, "\n")
       # remove javascript
       html.gsub!(%r{<script.*?>.*?(.|\n)*?</script>}, "\n")
       # remove a
@@ -47,7 +47,7 @@ module CxExtractor
       # remove css
       html.gsub!(%r{<style.*?>.*?(.|\n)*?</style>}, "\n")
       # remove tag
-      html.gsub!(/<.*?(.|\n)*?>/, "\n")
+      html.gsub!(/<.*?(.|\n)*?>/, "")
       replace_special_char(html)
     end
 

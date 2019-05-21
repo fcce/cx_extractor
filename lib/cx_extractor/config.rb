@@ -1,10 +1,9 @@
 # configure
 module CxExtractor
   DEFAULTS = {
-    threshold: 80,
+    threshold: 86,
     balck_width: 3,
     explore_parent: true,
-    remove_newline: true,
     chart_distribution: false,
     chart_file_name: 'distribution.png',
     chart_theme: {

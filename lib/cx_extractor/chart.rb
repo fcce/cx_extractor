@@ -27,13 +27,13 @@ module CxExtractor
       g.theme = chart_theme
       g.labels = cal_labels(distribution)
       chart_points.unshift 0
-      gruff_line(g, chart_points)
+      gruff_line(g, chart_points, distribution)
       g.hide_legend = true
       g.minimum_value = 0
       g.write(filename)
     end
 
-    def gruff_line(gruff, chart_points)
+    def gruff_line(gruff, chart_points, distribution)
       start_point = end_point = 0
       chart_points.each_with_index do |break_point, index|
         start_point = break_point
