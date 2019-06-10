@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Feng Ce']
   spec.email         = ['kalelfc@gmail.com']
 
-  spec.summary       = ' '
+  spec.summary       = 'Used to extract text from the web page.'
   spec.description = <<-CONTENT
 Used to extract text from the web page.
 This tool is appropriate for the web page which contains lots of text.
