@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     cx_extractor (0.1.2)
+      charlock_holmes
       gruff
       nokogiri
 
@@ -81,7 +82,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  charlock_holmes
   cx_extractor!
   rake
   rspec

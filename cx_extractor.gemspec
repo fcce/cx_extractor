@@ -26,8 +26,8 @@ This tool is appropriate for the web page which contains lots of text.
 
   spec.add_dependency 'gruff'
   spec.add_dependency 'nokogiri'
+  spec.add_dependency 'charlock_holmes'
   spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'charlock_holmes'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'typhoeus'
