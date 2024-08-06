@@ -39,15 +39,15 @@ module CxExtractor
     def get_clean_text(dom)
       # remove html comment
       html = dom.clone
-      html.gsub!(/<!--.*?(.|\n)*?-->/, "\n")
+      html = html.gsub(/<!--.*?(.|\n)*?-->/, "\n")
       # remove javascript
-      html.gsub!(%r{<script.*?>.*?(.|\n)*?</script>}, "\n")
+      html = html.gsub(%r{<script.*?>.*?(.|\n)*?</script>}, "\n")
       # remove a
-      html.gsub!(%r{<a[\t|\n|\r|\f].*?>.*?</a>}, '')
+      html = html.gsub(%r{<a[\t|\n|\r|\f].*?>.*?</a>}, '')
       # remove css
-      html.gsub!(%r{<style.*?>.*?(.|\n)*?</style>}, "\n")
+      html = html.gsub(%r{<style.*?>.*?(.|\n)*?</style>}, "\n")
       # remove tag
-      html.gsub!(/<.*?(.|\n)*?>/, '')
+      html = html.gsub(/<.*?(.|\n)*?>/, '')
       replace_special_char(html)
     end
 

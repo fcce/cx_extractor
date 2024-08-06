@@ -2,52 +2,90 @@ PATH
   remote: .
   specs:
     cx_extractor (0.1.2)
-      gruff (~> 0.7.0)
-      nokogiri (~> 1.0)
+      gruff
+      nokogiri
 
 GEM
   remote: https://rubygems.org/
   specs:
-    charlock_holmes (0.7.6)
-    diff-lcs (1.3)
-    ethon (0.12.0)
-      ffi (>= 1.3.0)
-    ffi (1.11.1)
-    gruff (0.7.0)
-      rmagick (~> 2.13, >= 2.13.4)
-    mini_portile2 (2.6.1)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    bigdecimal (3.1.8)
+    charlock_holmes (0.7.9)
+    diff-lcs (1.5.1)
+    ethon (0.16.0)
+      ffi (>= 1.15.0)
+    ffi (1.17.0-aarch64-linux-gnu)
+    ffi (1.17.0-aarch64-linux-musl)
+    ffi (1.17.0-arm-linux-gnu)
+    ffi (1.17.0-arm-linux-musl)
+    ffi (1.17.0-arm64-darwin)
+    ffi (1.17.0-x86-linux-gnu)
+    ffi (1.17.0-x86-linux-musl)
+    ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
+    ffi (1.17.0-x86_64-linux-musl)
+    gruff (0.25.0)
+      bigdecimal (>= 3.0)
+      histogram
+      rmagick (>= 5.5)
+    histogram (0.2.4.1)
+    nokogiri (1.16.7-aarch64-linux)
       racc (~> 1.4)
-    racc (1.5.2)
-    rake (13.0.1)
-    rmagick (2.16.0)
-    rspec (3.8.0)
-      rspec-core (~> 3.8.0)
-      rspec-expectations (~> 3.8.0)
-      rspec-mocks (~> 3.8.0)
-    rspec-core (3.8.0)
-      rspec-support (~> 3.8.0)
-    rspec-expectations (3.8.3)
+    nokogiri (1.16.7-arm-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.7-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.16.7-x86-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.7-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.16.7-x86_64-linux)
+      racc (~> 1.4)
+    observer (0.1.2)
+    pkg-config (1.5.6)
+    racc (1.8.1)
+    rake (13.2.1)
+    rmagick (6.0.1)
+      observer (~> 0.1)
+      pkg-config (~> 1.4)
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.8.0)
-    rspec-mocks (3.8.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.8.0)
-    rspec-support (3.8.0)
-    typhoeus (1.3.1)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.1)
+    typhoeus (1.4.1)
       ethon (>= 0.9.0)
 
 PLATFORMS
-  ruby
+  aarch64-linux
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux
+  arm-linux-gnu
+  arm-linux-musl
+  arm64-darwin
+  x86-linux
+  x86-linux-gnu
+  x86-linux-musl
+  x86_64-darwin
+  x86_64-linux
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
-  bundler (~> 1.16)
+  bundler
   charlock_holmes
   cx_extractor!
-  rake (~> 13.0)
-  rspec (~> 3.0)
+  rake
+  rspec
   typhoeus
 
 BUNDLED WITH
-   1.16.6
+   2.5.4

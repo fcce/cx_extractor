@@ -24,11 +24,11 @@ This tool is appropriate for the web page which contains lots of text.
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'gruff', '~> 0.7.0'
-  spec.add_dependency 'nokogiri', '~> 1.0'
-  spec.add_development_dependency 'bundler', '~> 1.16'
+  spec.add_dependency 'gruff'
+  spec.add_dependency 'nokogiri'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'charlock_holmes'
-  spec.add_development_dependency 'rake', '~> 13.0'
-  spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'typhoeus'
 end
